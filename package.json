@@ -1,0 +1,28 @@
+{
+  "name": "v13esportsbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@discordjs/builders": "github:discordjs/builders",
+    "@discordjs/rest": "0.1.0-canary.0",
+    "discord-api-types": "^0.22.0",
+    "discord.js": "^13.1.0",
+    "node": "^16.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ttrueno2110/v13esportsbot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ttrueno2110/v13esportsbot/issues"
+  },
+  "homepage": "https://github.com/ttrueno2110/v13esportsbot#readme"
+}
