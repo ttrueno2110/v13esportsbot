@@ -1,28 +1,46 @@
-// Require the necessary discord.js classes
-const { Client, Intents } = require('discord.js');
+const fs = require('fs');
+const { Client, Collection, Intents } = require('discord.js');
 const { token } = require('./config.json');
 
-// Create a new client instance
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+client.commands = new Collection();
 
-// When the client is ready, run this code (only once)
-client.once('ready', () => {
-	console.log('Ready!');
-});
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
 
+for (const file of commandFiles) {
+	const command = require(`./commands/${file}`);
+	// set a new item in the Collection
+	// with the key as the command name and the value as the exported module
+	client.commands.set(command.data.name, command);
+}
+
+for (const file of eventFiles) {
+	const event = require(`./events/${file}`);
+	if (event.once) {
+		client.once(event.name, (...args) => event.execute(...args));
+	} else {
+		client.on(event.name, (...args) => event.execute(...args));
+	}
+}
+
+// this doesnt work right now. currently, user isnt identified and 'client' isnt being passed through. copy-paste code doesnt even work smh
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isCommand()) return;
 
-	const { commandName } = interaction;
+	//tries to find a file with the command's name in the commands folder
+	const command = client.commands.get(interaction.commandName);
 
-	if (commandName === 'ping') {
-		await interaction.reply('Pong!');
-	} else if (commandName === 'server') {
-		await interaction.reply(`Server name: ${interaction.guild.name}\nTotal members: ${interaction.guild.memberCount}`);
-	} else if (commandName === 'user') {
-		await interaction.reply('User info.');
+	//Checks to see if there is a valid command
+	if (!command) return;
+
+	//Attempts to run the command, resulting in an error if one pops up.
+	try {
+		await command.execute(interaction);
+	} catch (error) {
+		console.error(error);
+		await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
 	}
 });
-// Login to Discord with your client's token
+
 client.login(token);
-//^ shamelessly taken from guide
