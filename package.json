@@ -1,28 +1,17 @@
 {
-  "name": "v13esportsbot",
+  "name": "botv2",
   "version": "1.0.0",
-  "description": "",
+  "description": "Discord bot for the Reservoir High School Esports club.",
   "main": "index.js",
-  "dependencies": {
-    "@discordjs/builders": "github:discordjs/builders",
-    "@discordjs/rest": "0.1.0-canary.0",
-    "discord-api-types": "^0.22.0",
-    "discord.js": "^13.1.0",
-    "node": "^16.6.1"
-  },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ttrueno2110/v13esportsbot.git"
-  },
-  "keywords": [],
-  "author": "",
+  "author": "Jackson Durbin",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ttrueno2110/v13esportsbot/issues"
-  },
-  "homepage": "https://github.com/ttrueno2110/v13esportsbot#readme"
+  "dependencies": {
+    "@discordjs/builders": "^0.6.0",
+    "@discordjs/rest": "^0.1.0-canary.0",
+    "discord-api-types": "^0.23.0",
+    "discord.js": "^13.1.0"
+  }
 }
