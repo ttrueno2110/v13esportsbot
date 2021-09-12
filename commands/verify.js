@@ -9,14 +9,14 @@ module.exports = {
 		const row = new MessageActionRow()
 		.addComponents(
 			new MessageButton()
-				.setCustomId('bazinga')
-				.setLabel('bazinga')
-				.setStyle('PRIMARY')
+				.setCustomId('Verify')
+				.setLabel('Verify')
+				.setStyle('LINK')
                 .setURL('https://google.com')
 		);
 		const embed = new MessageEmbed()
 			.setColor('#0099ff')
-			.setTitle('I Wonder What This Video is?')
+			.setTitle('Click the button below to connect your discord and hcpss account.')
 			.setURL('https://www.youtube.com/watch?v=VVjNMH5OxGc')
 			.setDescription('I guess theres only one way to find out!');
 
