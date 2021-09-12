@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
-
+//copy pasted from other commands, will fill in later
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('verify')
