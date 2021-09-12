@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Discord bot for the Reservoir High School Esports club.",
   "main": "index.js",
-<<<<<<< HEAD
   "dependencies": {
     "@discordjs/builders": "github:discordjs/builders",
     "@discordjs/rest": "0.1.0-canary.0",
@@ -13,8 +12,6 @@
     "nodejs": "0.0.0"
   },
   "devDependencies": {},
-=======
->>>>>>> dce15a743b03520126963e23ebb3d43232e98891
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
