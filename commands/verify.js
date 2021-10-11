@@ -9,10 +9,15 @@ module.exports = {
 		const row = new MessageActionRow()
 		.addComponents(
 			new MessageButton()
-				.setCustomId('Verify')
-				.setLabel('Verify')
+				.setCustomId('GVerify')
+				.setLabel('Verify with Google')
 				.setStyle('LINK')
-                .setURL('https://google.com')
+                .setURL('https://google.com'),
+            new MessageButton()
+                .setCustomId('MVerify')
+                .setLabel('Verify with Microsoft')
+                .setStyle('LINK')
+                
 		);
 		const embed = new MessageEmbed()
 			.setColor('#0099ff')
