@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
+/*const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
 
 module.exports = {
@@ -22,3 +22,5 @@ module.exports = {
 			await interaction.reply({ content: 'Pong!', ephemeral: true, embeds: [embed], components: [row] });
 	},
 };
+command template. copy, paste, build from here.
+*/
